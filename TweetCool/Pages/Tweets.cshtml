@@ -1,0 +1,23 @@
+﻿@page
+@model TweetsModel
+@{
+    ViewData["Title"] = "Tweets";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Discussion</h1>
+    <h2 align="left"> Previous content:</h2>
+</div>
+
+
+@foreach (var username in IndexModel.Comments.Keys)
+{
+    <h2>@username</h2>
+    <ul>
+        @foreach (var message in IndexModel.Comments[username])
+        {
+            <li>@message.TimeStamp @message.Text </li>
+        }
+    </ul>
+
+}
